@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rahul J | Pure AI Chatbot Portfolio</title>
+  
+  <!-- Google Fonts: Fredoka, Caveat, Quicksand, Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="chatbot-mode">
+
+  <!-- Background Floating Sparkles & Doodles -->
+  <div class="doodle doodle-star1">✦</div>
+  <div class="doodle doodle-star2">★</div>
+  <div class="doodle doodle-heart1">♡</div>
+  <div class="doodle doodle-heart2">♥</div>
+  <div class="doodle doodle-sparkle1">✨</div>
+
+  <!-- Top App Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="bot-status-avatar">
+        <div class="avatar-circle">
+          <span>RJ</span>
+          <i class="fa-solid fa-heart heart-badge"></i>
+        </div>
+        <div class="status-indicator"></div>
+      </div>
+      <div class="bot-header-title">
+        <h1 class="app-title">Rahul's AI Assistant</h1>
+        <span class="app-subtitle"><i class="fa-solid fa-circle-check text-green"></i> Online • Ask anything about Rahul's Projects, Skills & Resume</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="btn-icon-head" id="viewResumeBtn" title="View & Download Resume">
+        <i class="fa-solid fa-file-arrow-down"></i> Resume
+      </button>
+      <button class="btn-icon-head" id="clearChatBtn" title="Reset Conversation">
+        <i class="fa-solid fa-rotate-right"></i> Reset
+      </button>
+      <button class="btn-icon-head" id="soundToggle" title="Toggle Sound">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+      <button class="btn btn-connect" id="headerConnectBtn">
+        Let's Connect <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Full-Screen Workspace Grid -->
+  <div class="chatbot-workspace">
+
+    <!-- LEFT SIDEBAR: Character Desk & Quick Nav -->
+    <aside class="sidebar-desk">
+      
+      <!-- Desk Scene Card Wrapper -->
+      <div class="desk-card-wrapper">
+        
+        <!-- Header Text Bar ABOVE Photo -->
+        <div class="desk-header-tag">
+          <span class="greeting-cursive">Hello, I'm</span>
+          <h2 class="name-display">Rahul J</h2>
+          <div class="role-pill">AI & Data Science Student</div>
+        </div>
+
+        <!-- 2nd Uploaded Boy Developer Illustration (Uncropped) -->
+        <div class="avatar-image-box">
+          <img src="assets/rahul-avatar.jpg" alt="Rahul J Boy Developer Illustration" class="rahul-desk-img">
+        </div>
+
+      </div>
+
+      <!-- Social Floating Toolbar -->
+      <div class="social-bar">
+        <a href="https://github.com/rj4349303-arch" target="_blank" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/rahul-j-120413359?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://twitter.com" target="_blank" class="social-btn" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="mailto:rj4349303@gmail.com" class="social-btn" title="Email"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+
+      <!-- Category Shortcut Deck -->
+      <div class="category-shortcuts-dock">
+        <h4 class="category-header">Explore Topics</h4>
+        
+        <div class="shortcut-cards-grid">
+          
+          <!-- Card 1: About Me -->
+          <button class="shortcut-card-btn" data-topic="about">
+            <div class="card-avatar-box bg-pink">
+              <svg viewBox="0 0 100 100" class="mini-avatar-svg">
+                <circle cx="50" cy="50" r="45" fill="#FFE1E8"/>
+                <circle cx="50" cy="40" r="20" fill="#4A262C"/>
+                <circle cx="50" cy="44" r="16" fill="#FFDFD3"/>
+                <ellipse cx="43" cy="43" rx="2.5" ry="3.5" fill="#3D2C38"/>
+                <ellipse cx="57" cy="43" rx="2.5" ry="3.5" fill="#3D2C38"/>
+                <ellipse cx="39" cy="47" rx="3" ry="1.8" fill="#FF8DA1" opacity="0.7"/>
+                <ellipse cx="61" cy="47" rx="3" ry="1.8" fill="#FF8DA1" opacity="0.7"/>
+                <path d="M 46 49 Q 50 52 54 49" stroke="#3D2C38" stroke-width="1.5" fill="none"/>
+                <path d="M 32 75 Q 50 65 68 75 L 68 95 L 32 95 Z" fill="#FF5E8E"/>
+              </svg>
+            </div>
+            <div class="card-text-box">
+              <h5 class="card-title">About Me</h5>
+              <p class="card-sub">Get to know me</p>
+            </div>
+            <div class="card-arrow-pill"><i class="fa-solid fa-arrow-right"></i></div>
+          </button>
+
+          <!-- Card 2: Skills -->
+          <button class="shortcut-card-btn" data-topic="skills">
+            <div class="card-avatar-box bg-green">
+              <div class="avatar-icon-emoji">💻</div>
+            </div>
+            <div class="card-text-box">
+              <h5 class="card-title">Skills</h5>
+              <p class="card-sub">Tech stack & tools</p>
+            </div>
+            <div class="card-arrow-pill"><i class="fa-solid fa-arrow-right"></i></div>
+          </button>
+
+          <!-- Card 3: Projects -->
+          <button class="shortcut-card-btn" data-topic="projects">
+            <div class="card-avatar-box bg-yellow">
+              <div class="avatar-icon-emoji">💡</div>
+            </div>
+            <div class="card-text-box">
+              <h5 class="card-title">Projects</h5>
+              <p class="card-sub">Explore case studies</p>
+            </div>
+            <div class="card-arrow-pill"><i class="fa-solid fa-arrow-right"></i></div>
+          </button>
+
+          <!-- Card 4: Experience -->
+          <button class="shortcut-card-btn" data-topic="experience">
+            <div class="card-avatar-box bg-purple">
+              <div class="avatar-icon-emoji">📓</div>
+            </div>
+            <div class="card-text-box">
+              <h5 class="card-title">Experience</h5>
+              <p class="card-sub">Internships & work</p>
+            </div>
+            <div class="card-arrow-pill"><i class="fa-solid fa-arrow-right"></i></div>
+          </button>
+
+          <!-- Card 5: Contact -->
+          <button class="shortcut-card-btn" data-topic="contact">
+            <div class="card-avatar-box bg-rose">
+              <div class="avatar-icon-emoji">✉️</div>
+            </div>
+            <div class="card-text-box">
+              <h5 class="card-title">Contact</h5>
+              <p class="card-sub">Let's connect</p>
+            </div>
+            <div class="card-arrow-pill"><i class="fa-solid fa-arrow-right"></i></div>
+          </button>
+
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- CENTER PANEL: Pure Interactive AI Chat Stream -->
+    <main class="chat-main">
+      
+      <!-- Conversation History Container -->
+      <div class="chat-stream" id="chatStream">
+        
+        <!-- Welcome Hero Bot Bubble -->
+        <div class="message bot-msg welcome-card-msg">
+          <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+          <div class="msg-content">
+            <div class="welcome-banner">
+              <span class="welcome-tag">✨ AI Portfolio Workspace v2.0</span>
+              <h2>Welcome! I'm Rahul's AI Assistant 🤖</h2>
+              <p>I can show you everything about Rahul—his <strong>IoT safety devices</strong>, <strong>RAG Healthcare platform</strong>, <strong>Tamil digital literacy app</strong>, <strong>technical skills</strong>, and <strong>resume</strong>.</p>
+              <div class="welcome-actions">
+                <button class="btn btn-primary prompt-trigger" data-prompt="Introduce Rahul">⚡ Introduce Rahul</button>
+                <button class="btn btn-secondary prompt-trigger" data-prompt="Show Resume">📄 View Resume</button>
+                <button class="btn btn-secondary prompt-trigger" data-prompt="Show Featured Projects">🚀 View Projects</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Action Prompt Carousel Bar (Resume prompt next to Tell me about Rahul) -->
+      <div class="prompt-bar-container">
+        <span class="prompt-bar-label">Suggested Prompts:</span>
+        <div class="prompt-bar">
+          <button class="prompt-chip" data-prompt="Tell me about Rahul">⚡ Tell me about Rahul</button>
+          <button class="prompt-chip" data-prompt="Show Resume">📄 View Resume</button>
+          <button class="prompt-chip" data-prompt="What projects has he built?">🚀 Show Featured Projects</button>
+          <button class="prompt-chip" data-prompt="What are his core programming skills?">💡 Programming Skills</button>
+          <button class="prompt-chip" data-prompt="Tell me about NALAM Healthcare">🏥 NALAM Healthcare App</button>
+          <button class="prompt-chip" data-prompt="Tell me about GasIQ IoT">🔥 GasIQ IoT Detector</button>
+          <button class="prompt-chip" data-prompt="How can I contact him?">✉️ Contact Information</button>
+        </div>
+      </div>
+
+      <!-- Main Chat Input Dock -->
+      <div class="chat-input-wrapper">
+        <form class="chat-input-form" id="mainChatForm">
+          <button type="button" class="input-action-btn" id="micBtn" title="Voice Input">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+          
+          <input type="text" id="mainChatInput" placeholder="Ask AI Assistant anything about Rahul..." autocomplete="off">
+
+          <button type="submit" class="btn btn-send-pill">
+            Send <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+
+    </main>
+
+    <!-- RIGHT PANEL: Slide-out Detail Specs Drawer -->
+    <aside class="detail-drawer" id="detailDrawer">
+      <div class="drawer-header">
+        <h3 id="drawerTitle"><i class="fa-solid fa-circle-info"></i> Details Spec</h3>
+        <button class="drawer-close-btn" id="closeDrawerBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="drawer-body" id="drawerBody">
+        <!-- Dynamic content injected via JS -->
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- FULL-SCREEN RESUME PREVIEW & DOWNLOAD MODAL -->
+  <div class="resume-modal-overlay" id="resumeModal">
+    <div class="resume-modal-container">
+      <div class="resume-modal-header">
+        <h3><i class="fa-solid fa-file-pdf"></i> Rahul J - Resume Document</h3>
+        <button class="resume-modal-close" id="closeResumeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="resume-modal-body">
+        <img src="assets/rahul-resume.jpg" alt="Rahul J Official Resume" class="resume-doc-img">
+      </div>
+      <div class="resume-modal-footer">
+        <a href="assets/rahul-resume.jpg" download="Rahul_J_Resume.jpg" class="btn btn-connect">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script src="script.js"></script>
+</body>
+</html>
